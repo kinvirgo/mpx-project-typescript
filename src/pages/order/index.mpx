@@ -1,0 +1,15 @@
+<template>
+方案
+</template>
+
+<script lang="ts" src="./index.ts"></script>
+
+<script type="application/json">
+  {
+    "navigationBarTitleText" : "方案"
+  }
+</script>
+
+<style lang="scss">
+@import './index.scss';
+</style>

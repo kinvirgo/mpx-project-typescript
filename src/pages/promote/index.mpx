@@ -1,0 +1,34 @@
+<template minapp='mpx' xlang='wxml'>
+    <view class="promote__head">
+        <view class="promote__card {{ isValid && 'valid' }}">
+            <!-- <view class="promote__card--avatar"></view> -->
+            <image class="promote__card--avatar" src="{{ userInfo.avatarUrl || defAvatar}}" />
+            <view class="promote__card--nickname">{{userInfo.nickName || "微信昵称"}}</view>
+            <view class="promote__card--validity">推广员有效期至：{{channelEndTime}}</view>
+            <view class="promote__card--bindNum">目前已绑定：{{countBindUser}} 位</view>
+            <!-- <button wx:show="{{isValid}}" class="promote__card--applyButton">申请成为推广员</button> -->
+        </view>
+    </view>
+    <view class="promote__nav">
+        <block wx:for="{{navs}}" wx:key="index" >
+            <view bindtap="handleTo" data-url="{{item.url}}" class="promote__nav--item {{item.class}}">
+                <!-- <view class="promote__nav--icon" style="background-image:url({{item.icon }})" ></view> -->
+                <image class="promote__nav--icon" src="{{item.icon}}" />
+                <view class="promote__nav--title">{{item.title}}</view>
+            </view>
+        </block>
+    </view>
+</template>
+
+<script lang="ts" src="./index.ts"></script>
+
+<script type="application/json">
+  {
+    "navigationBarTitleText" : "推广员专区",
+    "enablePullDownRefresh" : true
+  }
+</script>
+
+<style lang="scss">
+@import './index.scss';
+</style>

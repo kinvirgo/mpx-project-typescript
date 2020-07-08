@@ -1,0 +1,16 @@
+<template minapp='mpx' xlang='wxml'>
+    <canvas style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas>
+    <image style="width:200px;height:200px" src="{{qr}}" />
+</template>
+
+<script lang="ts" src="./index.ts"></script>
+
+<script type="application/json">
+  {
+    "navigationBarTitleText" : "推广图片"
+  }
+</script>
+
+<style lang="scss">
+@import './index.scss';
+</style>

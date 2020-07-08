@@ -1,0 +1,25 @@
+<template minapp='mpx' xlang='wxml'>
+    <view
+        class="init-loading__body {{ fullScreen && 'full-screen'}}"
+        style="z-index:{{zIndex}}"
+    >
+        <view style="padding-top:{{offset}}"></view>
+        <view class="init-loading__box">
+            <view class="init-loading__box--point"></view>
+            <view class="init-loading__box--point delay-1"></view>
+            <view class="init-loading__box--point delay-2"></view>
+        </view>
+        <view wx:show="{{isDescription}}" class="init-loading__txt">{{description}}</view>
+        <slot></slot>
+    </view>
+</template>
+
+<script lang="ts" src="./index.ts"></script>
+
+<script type="application/json">
+  {}
+</script>
+
+<style lang="scss">
+@import './index.scss';
+</style>

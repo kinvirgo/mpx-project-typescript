@@ -1,0 +1,53 @@
+page{
+    background: #fff;
+}
+.bind_user{
+    &__content{
+        &--head{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80rpx;
+            background: #F8B508;
+            position: sticky;
+            left: 0;
+            top: 0;
+            &:before{
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                height: 50rpx;
+                border-left: 2rpx solid #fff;
+                margin-top: -25rpx;
+                margin-left: -1px;
+            }
+        }
+    }
+    &__head{
+        &--item{
+            flex: 0 0 50%;
+            text-align: center;
+            font-size: 28rpx;
+            color: #fff;
+        }
+    }
+    &__options{
+        display: flex;
+        min-height: 100rpx;
+
+        &:nth-child(odd){
+            background: #f7f7f7;
+        }
+
+        &--name,
+        &--time{
+            flex: 1 0 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 26rpx;
+            color: #333333;
+        }
+    }
+}

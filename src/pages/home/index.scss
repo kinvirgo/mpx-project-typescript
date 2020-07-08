@@ -1,0 +1,88 @@
+.mpx-index{
+    &__swiper{
+        margin-bottom: 20rpx;
+    }
+    &__tools{
+        margin: 0 20rpx 20rpx;
+        background: #ffffff;
+        padding: 16rpx;
+        border-radius: 8rpx;
+        box-shadow: 0 2rpx 10rpx rgba(0,0,0,.05);
+
+        &--title{
+            font-size: 28rpx;
+            // line-height: 28rpx;
+            padding-left: 16rpx;
+            color: #333333;
+            position: relative;
+            // border-left: 5rpx solid #FFD101;
+
+            &::before{
+                position: absolute;
+                left: 0;
+                top: 50%;
+                content: '';
+                height: 28rpx;
+                border-left: 5rpx solid #FFD101;
+                transform: translateY(-50%);
+            }
+        }
+        &--navs{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 16rpx 65rpx 0;
+        }
+        &--nav{
+            flex: 0 0 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 24rpx 18rpx;
+            // justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        &--navIcon{
+            width: 44rpx;
+            height: 44rpx;
+        }
+        &--navTitle{
+            font-size: 26rpx;
+            color: #333333;
+            margin: 4rpx 0;
+        }
+        &--navDes{
+            font-size: 22rpx;
+            color: #999999;
+        }
+    }
+}
+
+.border-right::before{
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    border-left: 1rpx solid #dcdcdc;
+    transform: scaleX(.5);
+    transform-origin : 0 0;
+    z-index: 2;
+}
+
+.border-bottom::after{
+    display: block;
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    border-top: 1rpx solid #dcdcdc;
+    transform: scaleY(.5);
+    transform-origin : 0 0;
+    z-index: 2;
+}

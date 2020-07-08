@@ -1,0 +1,39 @@
+<template>
+  <!-- 定义列表模版 -->
+  <template name="cell">
+    <view bindtap="menuJump" data-navigator="{{navigator}}" data-type="{{type}}" data-url="{{url}}" class="mpx-my__nav--cell" hover-class="mpx-my__nav--hover">
+        <image class="nav__cell--icon" src="{{imgSrc}}" />
+        <text class="nav__cell--title">{{title}}</text>
+        <text class="nav__cell--jump"></text>
+    </view>
+  </template>
+  <!-- 定义列表模版 -->
+  <view class="mpx-my__info mb-20rpx">
+    <!-- 有信息 -->
+    <image class="mpx-my__info--avatar" src="{{userInfo.avatarUrl || defAvatar}}" />
+    <text wx:if="{{userInfo.nickName}}" class="mpx-my__info--nickname">{{userInfo.nickName}}</text>
+    <button wx:else class="mpx-my__button--getInfo" open-type="getUserInfo" bindgetuserinfo="getUserInfo" >点击登录</button>
+  </view>
+  <view class="mpx-my__nav mb-20rpx">
+    <block wx:for="{{menus}}" wx:key="index" >
+      <!-- 使用模版 -->
+      <template is="cell" data="{{...item}}" ></template>
+    </block>
+  </view>
+  <view class="mpx-my__ad mb-20rpx">
+    <image mode="widthFix" class="mpx-my__ad--img" src="http://ztc-ioms-tx.sit.sf-express.com/m/lottery-betting/dist/img/h5-img-2.87b40830.png" />
+  </view>
+</template>
+
+<script lang="ts" src="./index.ts"></script>
+
+<script type="application/json">
+  {
+    "navigationBarTitleText" : "我的",
+    "enablePullDownRefresh" : true
+  }
+</script>
+
+<style lang="scss">
+@import './index.scss';
+</style>

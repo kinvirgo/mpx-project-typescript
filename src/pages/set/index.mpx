@@ -1,0 +1,34 @@
+<template minapp='mpx' xlang='wxml'>
+    <wxs src="../../wxs/index.wxs" module="WXS" ></wxs>
+    <view class="mpx-msgSet">
+        <block wx:for="{{messages}}" wx:key="index">
+            <view class="mpx-msgSet__group">
+                <view class="mpx-msgSet__group--des">{{item.groupName}}</view>
+                <view class="mpx-msgSet__cell" wx:for="{{item.messageDicts}}" wx:for-item="cItem" wx:for-index="cIndex" wx:key="cIndex">
+                    <view class="mpx-msgSet__cell--label">{{cItem.msgName}}</view>
+                    <view class="mpx-msgSet__cell--switch">
+                        <van-switch size="48rpx" bind:change="onSwitch" data-index="{{index}}" data-cindex="{{cIndex}}" loading="{{cItem.loading}}" checked="{{!WXS.isInArray(refuseMessageIds, cItem.id)}}" active-color="#67C740" inactive-color="#E9E9E9" />
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <!-- 异步控制 -->
+    <van-action-sheet bind:select="sheetSelect" bind:cancel="clearTaskDep" show="{{sheetData.show}}"  actions="{{sheetData.actions}}" description="{{sheetData.description}}" cancel-text="取消" />
+</template>
+
+<script lang="ts" src="./index.ts"></script>
+
+<script type="application/json">
+  {
+    "usingComponents": {
+        "van-switch": "@vant/weapp/dist/switch/index",
+        "van-action-sheet": "@vant/weapp/dist/action-sheet/index"
+    },
+    "navigationBarTitleText" : "消息设置"
+  }
+</script>
+
+<style lang="scss">
+@import './index.scss';
+</style>

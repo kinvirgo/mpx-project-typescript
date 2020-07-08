@@ -1,0 +1,98 @@
+page{
+    padding-bottom: calc(100rpx + env(safe-area-inset-bottom));
+}
+
+.mpx-my{
+    &__info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 200rpx;
+        background: url('../../static/images/img-my-bg.png') no-repeat center;
+        background-size: 100% auto;
+        padding: 0 30rpx 0 46rpx;
+        &--avatar{
+            width: 100rpx;
+            height: 100rpx;
+            margin-bottom: 20rpx;
+            border-radius: 50%;
+        }
+        &--nickname{
+            font-size: 28rpx;
+            color: #333333;
+        }
+    }
+    &__button--getInfo{
+        margin: 0;
+        padding: 20rpx 0;
+        border: none;
+        background:none;
+        font-size: 28rpx;
+        line-height: 30rpx;
+        color: #999;
+        &:after{
+            display: none;
+        }
+    }
+    &__nav{
+        &--cell{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24rpx 32rpx;
+            background: #ffffff;
+            position: relative;
+            z-index: 1;
+            
+            &:after{
+                content: '';
+                position: absolute;
+                left: (56rpx+30rpx);
+                right: 0;
+                bottom: 0;
+                border-bottom: 1px solid #efefef;
+                transform: scaleY(.5);
+                z-index: 2;
+            }
+            &:last-child:after{display: none;}
+
+        }
+        // hover-class
+        &--hover{
+            opacity: 0.9;
+            background: #f7f7f7;
+        }
+    }
+    &__ad--img{
+        width: 100%;
+    }
+}
+
+.nav__cell{
+    &--icon{
+        flex-shrink: 0;
+        width: 40rpx;
+        height: 40rpx;
+    }
+    &--title{
+        flex: 1;
+        text-align: left;
+        margin: 0 20rpx;
+        font-size: 28rpx;
+        line-height: 50rpx;
+        color: #333333;
+    }
+    &--jump{
+        flex-shrink: 0;
+        width: 30rpx;
+        height: 30rpx;
+        background: url('../../static/images/icon/icon-guide.png') no-repeat center;
+        background-size: auto 20rpx;
+    }
+}
+
+
+.mb-20rpx{
+    margin-bottom: 20rpx;
+}

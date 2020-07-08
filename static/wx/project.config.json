@@ -1,0 +1,16 @@
+{
+  "compileType": "miniprogram",
+  "setting": {
+    "newFeature": true,
+    "urlCheck": true,
+    "es6": false,
+    "postcss": true,
+    "minified": false,
+    "checkSiteMap": true,
+    "autoAudits": false
+  },
+  "appid": "xxx",
+  "projectname": "mpx-project-typescript",
+  "description": "A mpx project",
+  "condition": {}
+}

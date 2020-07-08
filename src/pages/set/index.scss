@@ -1,0 +1,48 @@
+.mpx-msgSet{
+    // 占位分割
+    &__placeholder{
+        padding-top: 20rpx;
+    }
+    &__group--des{
+        padding: 20rpx 30rpx;
+        font-size: 24rpx;
+        color: #4F4F4F;
+    }
+    &__cell{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30rpx;
+        background: #ffffff;
+        position: relative;
+        
+        &--label{
+            font-size: 28rpx;
+            color: #131313;
+        }
+        &--switch{
+            font-size: 0;
+            .van-switch{
+                font-size: 46rpx;
+                // border: 4rpx solid #E9E9E9;
+                border-width: 4rpx;
+                border-color: transparent;
+            }
+            .van-switch--on{
+                // border: 4rpx solid #07c160;
+                border-width: 4rpx;
+                border-color: transparent;
+            }
+        }
+        &+.mpx-msgSet__cell:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30rpx;
+            right: 0;
+            border-top: 1rpx solid #efefef;
+            transform: scaleY(.5);
+            z-index: 1;
+        }
+    }
+}

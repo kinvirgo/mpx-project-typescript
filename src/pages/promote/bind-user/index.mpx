@@ -1,0 +1,31 @@
+<template minapp='mpx' xlang='wxml'>
+    <view wx:show="{{!isInit}}" class="bind_user__content">
+        <view class="bind_user__content--head">
+            <view class="bind_user__head--item">绑定人</view>
+            <view class="bind_user__head--item">绑定时间</view>
+        </view>
+        <view class="bind_user__content--options">
+            <view wx:for="{{userList}}" wx:key="index" class="bind_user__options">
+                <view class="bind_user__options--name">{{item.nickname}}</view>
+                <view class="bind_user__options--time">{{ item.time }}</view>
+            </view>
+        </view>
+    </view>
+    <!-- init-loading 测试 -->
+    <init-loading wx:show="{{isInit}}" full-screen offset="10vh" />
+</template>
+
+<script lang="ts" src="./index.ts"></script>
+
+<script type="application/json">
+  {
+    "navigationBarTitleText" : "绑定列表",
+    "usingComponents" : {
+        "init-loading" : "@/components/init-loading"
+    }
+  }
+</script>
+
+<style lang="scss">
+@import './index.scss';
+</style>

@@ -1,0 +1,6 @@
+module.exports = {
+    // 是否在数组中
+    isInArray:function(array, value){
+        return array.indexOf(value) > -1
+    }
+};
